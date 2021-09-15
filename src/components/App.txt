@@ -1,0 +1,55 @@
+import React from "react";
+var isLoggedIn = true; // creating a logging variiablr to ceheck
+function renderConditionally() {
+  if (isLoggedIn === true) {
+    return <h1>Hello</h1>; // render hello if loggin
+  } else {
+    return (
+      // render ulogin page if found false
+      <form className="form">
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Login</button>
+      </form>
+    );
+  }
+}
+function App() {
+  return <div className="container">{renderConditionally()}</div>; // calling function
+}
+
+export default App;
+///////////////////////////////ternary operator
+function App() {
+  return (
+    <div className="container">
+      {isLoggedIn === true ? (
+        <h1>Hello</h1> // render hello if loggin
+      ) : (
+        // render ulogin page if found false
+        <Login />
+      )}
+    </div>
+  ); // calling function
+}
+/////////////////////////////reducing with boolean satemanet
+import React from "react";
+import Login from "./Login";
+var isLoggedIn = true; // creating a logging variiablr to ceheck
+
+function App() {
+  return (
+    <div className="container">
+      {isLoggedIn ? ( // its a bollean operatoe we not need th pass === true/false
+        <h1>Hello</h1> // render hello if loggin
+      ) : (
+        // render ulogin page if found false
+        <Login />
+      )}
+    </div>
+  ); // calling function
+}
+
+export default App;
+/////////////////&& in js and react
+currentTime >=3 && <h1>why ur working</h1>// beacuse if condition is false in first statement then it will not execute the other line at all
